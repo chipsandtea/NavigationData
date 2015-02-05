@@ -407,6 +407,7 @@
 				9D6540A41A816F7C00F45F4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D6540A51A816F7C00F45F4B /* Build configuration list for PBXNativeTarget "NavigationDataTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				9D6540A71A816F7C00F45F4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
