@@ -8,22 +8,6 @@
 
 import UIKit
 
-//let bearing_1 = "bearing_1"//loc2
-//let bearing_2 = "bearing_2"//loc3
-//let bearing_3 = "bearing_3"//loc4
-//let bearing1_degrees = "bearing1_degrees"//bearing#2
-//let bearing2_degrees = "bearing2_degrees"//bearing#3
-//let bearing3_degrees = "bearing3_degrees"//bearing#4
-//let gps_latitude_degrees = "gps_latitude_degrees"
-//let gps_latitude_min = "gps_latitude_min"
-//let gps_latitude_sec = "gps_latitude_sec"
-//let gps_longitude_degrees = "gps_longitude_degrees"
-//let gps_longitude_min = "gps_longitude_min"
-//let gps_longitude_sec = "gps_longitude_sec"
-//let nwind_speed = "nwind_speed"
-//let ndepth = "ndepth"
-//let nweather_observation = "nweather_observation"
-
 class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate {
 
     @IBOutlet var pickLoc: UIPickerView! = UIPickerView()
@@ -309,55 +293,43 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         return true
     }
     
-//    func gatherAllData() {
-//        
-//        var aDictionary = [String : String]()
-//        var bDictionary = [String : String]()
-//
-//        aDictionary[bearing_1] = Location2.text
-//        aDictionary[bearing_2] = Location3.text
-//        aDictionary[bearing_3] = Location4.text
-//        aDictionary[bearing1_degrees] = Bearing2.text
-//        aDictionary[bearing2_degrees] = Bearing3.text
-//        aDictionary[bearing3_degrees] = Bearing4.text
-//        aDictionary[gps_latitude_degrees] = LATDEG.text
-//        aDictionary[gps_longitude_degrees] = LONGDEG.text
-//        aDictionary[gps_latitude_min] = LATMIN.text
-//        aDictionary[gps_longitude_min] = LONGMIN.text
-//        aDictionary[gps_latitude_sec] = LATSEC.text
-//        aDictionary[gps_longitude_sec] = LONGSEC.text
-//        aDictionary[nwind_speed] = WINDSPEED.text
-//        aDictionary[ndepth] = DEPTH.text
-//        aDictionary[nweather_observation] = weatherLabel.text
-//
-//        aDictionary["nmeasurement_time"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
-//        
-//        aDictionary["nmeasurement_date"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .NoStyle)
-//        
-//        
-// //       aDictionary.setObject(Location2.text, forKey:bearing_1)
-//        
-//        var myNewDictArray: [[String:String]] = []
-//        myNewDictArray.append(aDictionary)
-//        //sharedData().setObject(aDictionary, forKey: "navigation_data")
-//        sharedData().setObject(myNewDictArray, forKey: "navigation_data")
-//        //var webClass = MyRequestController();
-//        //sharedData(
-//        //let jsooon = JSON(sharedData())
-//        //println(jsooon)
-//        //webClass.sendRequest(jsooon)
-//
-//        //NEST ON THIRD!!!
-//        
-//        //sharedData()
-//        
-//        //println(sharedData())
-//    }
-//    
-//    @IBAction func nextButtonHit(sender: UIButton) {
-//        gatherAllData()
-//    }
+    func gatherAllData() {
+        
+        var aDictionary = [String : String]()
+        var bDictionary = [String : String]()
+        
+        aDictionary["bearing_1"] = Location2.text
+        aDictionary["bearing_2"] = Location3.text
+        aDictionary["bearing_3"] = Location4.text
+        aDictionary["bearing1_degrees"] = Bearing2.text
+        aDictionary["bearing2_degrees"] = Bearing3.text
+        aDictionary["bearing3_degrees"] = Bearing4.text
+        aDictionary["gps_latitude_degrees"] = LATDEG.text
+        aDictionary["gps_longitude_degrees"] = LONGDEG.text
+        aDictionary["gps_latitude_min"] = LATMIN.text
+        aDictionary["gps_longitude_min"] = LONGMIN.text
+        aDictionary["gps_latitude_sec"] = LATSEC.text
+        aDictionary["gps_longitude_sec"] = LONGSEC.text
+        aDictionary["nwind_speed"] = WINDSPEED.text
+        aDictionary["ndepth"] = DEPTH.text
+        aDictionary["nweather_observation"] = weatherLabel.text
+        
+        aDictionary["nmeasurement_time"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
+        
+        aDictionary["nmeasurement_date"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .NoStyle)
+        
+        //       aDictionary.setObject(Location2.text, forKey:bearing_1)
+        
+        var myNewDictArray: [[String:String]] = []
+        myNewDictArray.append(aDictionary)//add to overall dictionary(not needed?????)
+        sharedData().setObject(myNewDictArray, forKey: "navigation_data")
+        
+    }
 
+    @IBAction func saveData(sender: AnyObject) {
+        gatherAllData()
+        println(sharedData())
+    }
     /*
     // MARK: - Navigation
 
