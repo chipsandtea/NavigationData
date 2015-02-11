@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4A742BB11A8827CB001EF898 /* dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A742BB01A8827CB001EF898 /* dictionary.m */; };
+		9D0AD2CF1A8AF4CB00660F48 /* GroupNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AD2CE1A8AF4CB00660F48 /* GroupNameViewController.swift */; };
+		9D0AD2D11A8AF4D800660F48 /* SchoolSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AD2D01A8AF4D800660F48 /* SchoolSelectionViewController.swift */; };
+		9D0AD2D31A8AF4DF00660F48 /* SubmitDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AD2D21A8AF4DF00660F48 /* SubmitDataViewController.swift */; };
 		9D6540891A816F7C00F45F4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540881A816F7C00F45F4B /* AppDelegate.swift */; };
 		9D6540901A816F7C00F45F4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D65408F1A816F7C00F45F4B /* Images.xcassets */; };
 		9D6540931A816F7C00F45F4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D6540911A816F7C00F45F4B /* LaunchScreen.xib */; };
@@ -32,6 +35,9 @@
 		4A742BAE1A88277B001EF898 /* dictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dictionary.h; sourceTree = "<group>"; };
 		4A742BAF1A8827CB001EF898 /* NavigationData-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavigationData-Bridging-Header.h"; sourceTree = "<group>"; };
 		4A742BB01A8827CB001EF898 /* dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictionary.m; sourceTree = "<group>"; };
+		9D0AD2CE1A8AF4CB00660F48 /* GroupNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupNameViewController.swift; sourceTree = "<group>"; };
+		9D0AD2D01A8AF4D800660F48 /* SchoolSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolSelectionViewController.swift; sourceTree = "<group>"; };
+		9D0AD2D21A8AF4DF00660F48 /* SubmitDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitDataViewController.swift; sourceTree = "<group>"; };
 		9D6540831A816F7C00F45F4B /* NavigationData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6540871A816F7C00F45F4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D6540881A816F7C00F45F4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 			children = (
 				9D6540B41A81760C00F45F4B /* ViewController.swift */,
 				9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */,
+				9D0AD2CE1A8AF4CB00660F48 /* GroupNameViewController.swift */,
+				9D0AD2D01A8AF4D800660F48 /* SchoolSelectionViewController.swift */,
+				9D0AD2D21A8AF4DF00660F48 /* SubmitDataViewController.swift */,
 				9D6540AC1A81710100F45F4B /* ResponsiveTextFieldViewController.swift */,
 				9D6540881A816F7C00F45F4B /* AppDelegate.swift */,
 				9D6540A81A8170CF00F45F4B /* Main.storyboard */,
@@ -225,11 +234,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0AD2D11A8AF4D800660F48 /* SchoolSelectionViewController.swift in Sources */,
 				4A742BB11A8827CB001EF898 /* dictionary.m in Sources */,
 				9D6540B31A8175CC00F45F4B /* NavigatorDataViewController.swift in Sources */,
 				9D6540AD1A81710100F45F4B /* ResponsiveTextFieldViewController.swift in Sources */,
 				9D6540B51A81760C00F45F4B /* ViewController.swift in Sources */,
 				9D6540891A816F7C00F45F4B /* AppDelegate.swift in Sources */,
+				9D0AD2D31A8AF4DF00660F48 /* SubmitDataViewController.swift in Sources */,
+				9D0AD2CF1A8AF4CB00660F48 /* GroupNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

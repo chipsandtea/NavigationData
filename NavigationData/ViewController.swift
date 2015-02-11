@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: ResponsiveTextFieldViewController, UIPickerViewDelegate{
     
-    @IBOutlet weak var firstContinueButton: UIButton!
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
