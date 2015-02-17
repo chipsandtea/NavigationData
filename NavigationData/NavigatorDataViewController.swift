@@ -323,12 +323,13 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         var myNewDictArray: [[String:String]] = []
         myNewDictArray.append(aDictionary)//add to overall dictionary(not needed?????)
         sharedData().setObject(myNewDictArray, forKey: "navigation_data")
-        
+        bData().setObject(sharedData(), forKey: "group_data")
+        cData().setObject(bData(), forKey: "data")
     }
 
     @IBAction func saveData(sender: AnyObject) {
         gatherAllData()
-        println(sharedData())
+        println(cData())
     }
     /*
     // MARK: - Navigation
