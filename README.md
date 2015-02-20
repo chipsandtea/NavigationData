@@ -1,3 +1,3 @@
 # NavigationData
 
-The navigation data app created for O'Niell Sea Oddessy.
+The navigation data app created for O'Neill Sea Odyssey.
