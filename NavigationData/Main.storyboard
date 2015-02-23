@@ -93,7 +93,6 @@
                                 </state>
                                 <connections>
                                     <action selector="hitGroupSelect:" destination="wGk-YH-7RE" eventType="touchUpInside" id="Mp6-RO-xUf"/>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="8Tl-ar-IFa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sPj-RR-iRy">
@@ -105,7 +104,6 @@
                                 </state>
                                 <connections>
                                     <action selector="hitSchoolSelect:" destination="wGk-YH-7RE" eventType="touchUpInside" id="fR4-Mn-ciC"/>
-                                    <segue destination="dvb-r1-wRf" kind="push" id="rP0-NE-9Ji"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -754,8 +752,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="8Tl-ar-IFa"/>
-        <segue reference="rP0-NE-9Ji"/>
-    </inferredMetricsTieBreakers>
 </document>
