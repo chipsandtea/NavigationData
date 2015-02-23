@@ -17,7 +17,7 @@ class ViewController: ResponsiveTextFieldViewController, UIPickerViewDelegate{
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
