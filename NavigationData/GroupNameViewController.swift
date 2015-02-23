@@ -134,7 +134,7 @@ class GroupNameViewController: UIViewController,UIPickerViewDelegate {
         super.viewDidLoad()
         groupPicker.delegate = self
         selectedGroup = groupNames[0]
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
     
