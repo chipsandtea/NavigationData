@@ -161,6 +161,11 @@ class GroupNameViewController: UIViewController,UIPickerViewDelegate {
         selectedGroup = groupNames[row]
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false);
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var DestVC: NavigatorDataViewController = segue.destinationViewController as NavigatorDataViewController
         

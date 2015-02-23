@@ -22,7 +22,19 @@ class CompletedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func hitGroupSelect(sender: AnyObject) {
+        self.navigationController!.popToViewController(self.navigationController!.viewControllers[2] as UIViewController, animated: true)
+    }
 
+    @IBAction func hitSchoolSelect(sender: AnyObject) {
+        self.navigationController!.popToViewController(self.navigationController!.viewControllers[1] as UIViewController, animated: true)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false);
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
