@@ -700,7 +700,7 @@
         <!--Home Screen-->
         <scene sceneID="fTh-BG-tCw">
             <objects>
-                <viewController id="KiN-gh-HvA" customClass="IntroViewController" customModule="NavigationData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KiN-gh-HvA" customClass="ViewController" customModule="NavigationData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wBe-xg-xI0">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
