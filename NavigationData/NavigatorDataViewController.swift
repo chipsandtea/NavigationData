@@ -14,6 +14,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     var GroupName = String()
     var SchoolName = String()
     
+    @IBOutlet var doneButton: UIButton!
     @IBOutlet var pickLoc: UIPickerView! = UIPickerView()
     @IBOutlet var Location2: UITextField!
     @IBOutlet var Location3: UITextField!
@@ -83,6 +84,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideGPS(true)
         hideWeather(true)
         hideWind(true)
+        doneButton.hidden = true
 
 		BLTabButton.backgroundColor = UIColor.lightGrayColor()
     }
@@ -118,6 +120,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideGPS(true)
         hideWeather(true)
         hideWind(false)
+        doneButton.hidden = true
 		BLTabButton.backgroundColor = UIColor.clearColor()
 		WDTabButton.backgroundColor = UIColor.lightGrayColor()
 		GPSTabButton.backgroundColor = UIColor.clearColor()
@@ -129,6 +132,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWind(true)
         hideGPS(true)
         hideWeather(false)
+        doneButton.hidden = false
 		BLTabButton.backgroundColor = UIColor.clearColor()
 		WDTabButton.backgroundColor = UIColor.clearColor()
 		GPSTabButton.backgroundColor = UIColor.clearColor()
@@ -141,6 +145,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWind(true)
         hideWeather(true)
         hideGPS(false)
+        doneButton.hidden = true
 		BLTabButton.backgroundColor = UIColor.clearColor()
 		WDTabButton.backgroundColor = UIColor.clearColor()
 		GPSTabButton.backgroundColor = UIColor.lightGrayColor()
@@ -152,6 +157,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWind(true)
         hideWeather(true)
         hideBL(false)
+        doneButton.hidden = true
 		BLTabButton.backgroundColor = UIColor.lightGrayColor()
 		WDTabButton.backgroundColor = UIColor.clearColor()
 		GPSTabButton.backgroundColor = UIColor.clearColor()
