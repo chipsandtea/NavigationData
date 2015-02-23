@@ -10,6 +10,10 @@ import UIKit
 
 class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate {
 
+    @IBOutlet var schoolGroupName: UILabel!
+    var GroupName = String()
+    var SchoolName = String()
+    
     @IBOutlet var pickLoc: UIPickerView! = UIPickerView()
     @IBOutlet var Location2: UITextField!
     @IBOutlet var Location3: UITextField!
@@ -70,6 +74,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        schoolGroupName.text = "School: " + SchoolName + " Group: " + GroupName
         pickLoc.hidden = true
         BLTabButton.layer.borderWidth = 1
         GPSTabButton.layer.borderWidth = 1
@@ -331,14 +336,14 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         gatherAllData()
         println(cData())
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        var DestVC: SubmitDataViewController = segue.destinationViewController as SubmitDataViewController
+        DestVC.groupName = GroupName
     }
-    */
+
 
 }
