@@ -11,13 +11,13 @@ import UIKit
 class ViewController: ResponsiveTextFieldViewController, UIPickerViewDelegate{
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

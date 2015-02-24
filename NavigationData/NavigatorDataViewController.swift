@@ -10,6 +10,11 @@ import UIKit
 
 class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate {
 
+    @IBOutlet var schoolGroupName: UILabel!
+    var GroupName = String()
+    var SchoolName = String()
+    
+    @IBOutlet var doneButton: UIButton!
     @IBOutlet var pickLoc: UIPickerView! = UIPickerView()
     @IBOutlet var Location2: UITextField!
     @IBOutlet var Location3: UITextField!
@@ -70,6 +75,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        schoolGroupName.text = "School: " + SchoolName + " Group: " + GroupName
         pickLoc.hidden = true
         BLTabButton.layer.borderWidth = 1
         GPSTabButton.layer.borderWidth = 1
@@ -78,6 +84,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideGPS(true)
         hideWeather(true)
         hideWind(true)
+        doneButton.hidden = true
 
 		BLTabButton.backgroundColor = UIColor.lightGrayColor()
     }
@@ -113,6 +120,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideGPS(true)
         hideWeather(true)
         hideWind(false)
+        doneButton.hidden = true
 		BLTabButton.backgroundColor = UIColor.clearColor()
 		WDTabButton.backgroundColor = UIColor.lightGrayColor()
 		GPSTabButton.backgroundColor = UIColor.clearColor()
@@ -124,6 +132,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWind(true)
         hideGPS(true)
         hideWeather(false)
+        doneButton.hidden = false
 		BLTabButton.backgroundColor = UIColor.clearColor()
 		WDTabButton.backgroundColor = UIColor.clearColor()
 		GPSTabButton.backgroundColor = UIColor.clearColor()
@@ -136,6 +145,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWind(true)
         hideWeather(true)
         hideGPS(false)
+        doneButton.hidden = true
 		BLTabButton.backgroundColor = UIColor.clearColor()
 		WDTabButton.backgroundColor = UIColor.clearColor()
 		GPSTabButton.backgroundColor = UIColor.lightGrayColor()
@@ -147,6 +157,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWind(true)
         hideWeather(true)
         hideBL(false)
+        doneButton.hidden = true
 		BLTabButton.backgroundColor = UIColor.lightGrayColor()
 		WDTabButton.backgroundColor = UIColor.clearColor()
 		GPSTabButton.backgroundColor = UIColor.clearColor()
@@ -297,6 +308,8 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         
         var aDictionary = [String : String]()
         var bDictionary = [String : String]()
+        var cDictionary = [String : String]()
+        var dDictionary = [String : String]()
         
         aDictionary["bearing_1"] = Location2.text
         aDictionary["bearing_2"] = Location3.text
@@ -317,28 +330,38 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         aDictionary["nmeasurement_time"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .NoStyle, timeStyle: .ShortStyle)
         
         aDictionary["nmeasurement_date"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .NoStyle)
+        bDictionary["type"] = "navigation_data"
+        cDictionary["group"] = GroupName
+        dDictionary["id"] = "some id"
         
-        //       aDictionary.setObject(Location2.text, forKey:bearing_1)
+        sharedData().setObject(aDictionary, forKey: "data")
+        sharedData().addEntriesFromDictionary(bDictionary)
+        sharedData().addEntriesFromDictionary(cDictionary)
+        sharedData().addEntriesFromDictionary(dDictionary)
         
-        var myNewDictArray: [[String:String]] = []
-        myNewDictArray.append(aDictionary)//add to overall dictionary(not needed?????)
-        sharedData().setObject(myNewDictArray, forKey: "navigation_data")
-        bData().setObject(sharedData(), forKey: "group_data")
-        cData().setObject(bData(), forKey: "data")
+        //aDictionary.setObject(Location2.text, forKey:bearing_1)
+        
+        ///var myNewDictArray: [[String:String]] = []
+        //myNewDictArray.append(aDictionary)//add to overall dictionary(not needed?????)
+       // sharedData().setObject(myNewDictArray, forKey: "navigation_data")
+        //bData().setObject(sharedData(), forKey: "group_data")
+        //cData().setObject(bData(), forKey: "data")
     }
 
     @IBAction func saveData(sender: AnyObject) {
         gatherAllData()
-        println(cData())
+        println(sharedData())
+        println(GroupName)
+
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        var DestVC: SubmitDataViewController = segue.destinationViewController as SubmitDataViewController
+        DestVC.groupName = GroupName
     }
-    */
+
 
 }

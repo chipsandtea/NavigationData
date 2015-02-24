@@ -19,6 +19,7 @@
 		9D6540AD1A81710100F45F4B /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540AC1A81710100F45F4B /* ResponsiveTextFieldViewController.swift */; };
 		9D6540B31A8175CC00F45F4B /* NavigatorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */; };
 		9D6540B51A81760C00F45F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540B41A81760C00F45F4B /* ViewController.swift */; };
+		9DA065351A9B872B00AD4A9D /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9D6540AC1A81710100F45F4B /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
 		9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorDataViewController.swift; sourceTree = "<group>"; };
 		9D6540B41A81760C00F45F4B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				9D0AD2CE1A8AF4CB00660F48 /* GroupNameViewController.swift */,
 				9D0AD2D01A8AF4D800660F48 /* SchoolSelectionViewController.swift */,
 				9D0AD2D21A8AF4DF00660F48 /* SubmitDataViewController.swift */,
+				9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */,
 				9D6540AC1A81710100F45F4B /* ResponsiveTextFieldViewController.swift */,
 				9D6540881A816F7C00F45F4B /* AppDelegate.swift */,
 				9D6540A81A8170CF00F45F4B /* Main.storyboard */,
@@ -240,6 +243,7 @@
 				9D6540AD1A81710100F45F4B /* ResponsiveTextFieldViewController.swift in Sources */,
 				9D6540B51A81760C00F45F4B /* ViewController.swift in Sources */,
 				9D6540891A816F7C00F45F4B /* AppDelegate.swift in Sources */,
+				9DA065351A9B872B00AD4A9D /* CompletedViewController.swift in Sources */,
 				9D0AD2D31A8AF4DF00660F48 /* SubmitDataViewController.swift in Sources */,
 				9D0AD2CF1A8AF4CB00660F48 /* GroupNameViewController.swift in Sources */,
 			);
