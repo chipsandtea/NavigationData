@@ -20,7 +20,7 @@ class GroupNameViewController: UIViewController,UIPickerViewDelegate {
         "Spinner Dolphin",
         "Common Dolphin",
         "Pacific White sided Dolphin",
-        "Risso’s Dolphin",
+        "Risso's Dolphin",
         "Bottle-nosed Dolphin",
         "Harbor Porpoise",
         "Sea Otter",
