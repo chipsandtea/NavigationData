@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate {
+class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var schoolGroupName: UILabel!
     var GroupName = String()
@@ -30,6 +31,8 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     @IBOutlet var L4Label: UILabel!
     
     //gps
+    let locationManager = CLLocationManager()
+    
     @IBOutlet var LATDEG: UITextField!
     @IBOutlet var LONGDEG: UITextField!
     @IBOutlet var LATMIN: UITextField!
@@ -303,6 +306,49 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         }
         return true
     }
+    
+    @IBAction func findMyLocation(sender: AnyObject) {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+            
+            if error != nil {
+                println("Reverse geocoder failed with error" + error.localizedDescription)
+                return
+            }
+            
+            if placemarks.count > 0 {
+                let pm = placemarks[0] as CLPlacemark
+                self.displayLocationInfo(pm)
+            } else {
+                println("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark){
+        // stop updating to conserve battery life
+        locationManager.stopUpdatingLocation()
+        println(placemark.locality)
+        println(placemark.postalCode)
+        println(placemark.administrativeArea)
+        println(placemark.country)
+        println(placemark.location.coordinate.latitude)
+        println(placemark.location.coordinate.longitude)
+
+        
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("Error while updating location " + error.localizedDescription)
+    }
+
     
     func gatherAllData() {
         
