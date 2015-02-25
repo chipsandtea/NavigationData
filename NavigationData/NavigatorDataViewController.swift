@@ -335,14 +335,29 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     func displayLocationInfo(placemark: CLPlacemark){
         // stop updating to conserve battery life
         locationManager.stopUpdatingLocation()
-        println(placemark.locality)
-        println(placemark.postalCode)
-        println(placemark.administrativeArea)
-        println(placemark.country)
-        println(placemark.location.coordinate.latitude)
-        println(placemark.location.coordinate.longitude)
-
-        
+        // longitude and latitude parsing
+        var latitude = placemark.location.coordinate.latitude
+        var longitude = placemark.location.coordinate.longitude
+        var latSeconds = Int(latitude * 3600)
+        let latDegrees = latSeconds / 3600
+        latSeconds = abs(latSeconds % 3600)
+        let latMinutes = latSeconds / 60
+        latSeconds %= 60
+        var longSeconds = Int(longitude * 3600)
+        let longDegrees = longSeconds / 3600
+        longSeconds = abs(longSeconds % 3600)
+        let longMinutes = longSeconds / 60
+        longSeconds %= 60
+        var result = String(format:"%d°%d'%d\"%@ %d°%d'%d\"%@",
+            abs(latDegrees),
+            latMinutes,
+            latSeconds,
+            {return latDegrees >= 0 ? "N" : "S"}(),
+            abs(longDegrees),
+            longMinutes,
+            longSeconds,
+            {return longDegrees >= 0 ? "E" : "W"}() )
+        println(result)
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
