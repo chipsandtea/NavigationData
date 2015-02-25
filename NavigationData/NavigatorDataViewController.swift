@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate {
+class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var schoolGroupName: UILabel!
     var GroupName = String()
@@ -30,6 +31,8 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     @IBOutlet var L4Label: UILabel!
     
     //gps
+    let locationManager = CLLocationManager()
+    
     @IBOutlet var LATDEG: UITextField!
     @IBOutlet var LONGDEG: UITextField!
     @IBOutlet var LATMIN: UITextField!
@@ -303,6 +306,64 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         }
         return true
     }
+    
+    @IBAction func findMyLocation(sender: AnyObject) {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: {(placemarks, error)->Void in
+            
+            if error != nil {
+                println("Reverse geocoder failed with error" + error.localizedDescription)
+                return
+            }
+            
+            if placemarks.count > 0 {
+                let pm = placemarks[0] as CLPlacemark
+                self.displayLocationInfo(pm)
+            } else {
+                println("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    func displayLocationInfo(placemark: CLPlacemark){
+        // stop updating to conserve battery life
+        locationManager.stopUpdatingLocation()
+        // longitude and latitude parsing
+        var latitude = placemark.location.coordinate.latitude
+        var longitude = placemark.location.coordinate.longitude
+        var latSeconds = Int(latitude * 3600)
+        let latDegrees = latSeconds / 3600
+        latSeconds = abs(latSeconds % 3600)
+        let latMinutes = latSeconds / 60
+        latSeconds %= 60
+        var longSeconds = Int(longitude * 3600)
+        let longDegrees = longSeconds / 3600
+        longSeconds = abs(longSeconds % 3600)
+        let longMinutes = longSeconds / 60
+        longSeconds %= 60
+        var result = String(format:"%d°%d'%d\"%@ %d°%d'%d\"%@",
+            abs(latDegrees),
+            latMinutes,
+            latSeconds,
+            {return latDegrees >= 0 ? "N" : "S"}(),
+            abs(longDegrees),
+            longMinutes,
+            longSeconds,
+            {return longDegrees >= 0 ? "E" : "W"}() )
+        println(result)
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        println("Error while updating location " + error.localizedDescription)
+    }
+
     
     func gatherAllData() {
         

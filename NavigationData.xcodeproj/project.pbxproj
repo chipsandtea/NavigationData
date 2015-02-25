@@ -20,6 +20,7 @@
 		9D6540B31A8175CC00F45F4B /* NavigatorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */; };
 		9D6540B51A81760C00F45F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540B41A81760C00F45F4B /* ViewController.swift */; };
 		9DA065351A9B872B00AD4A9D /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */; };
+		F9A7BF721A9D5E5D00F01BDC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A7BF711A9D5E5D00F01BDC /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorDataViewController.swift; sourceTree = "<group>"; };
 		9D6540B41A81760C00F45F4B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		F9A7BF711A9D5E5D00F01BDC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A7BF721A9D5E5D00F01BDC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +78,7 @@
 		9D65407A1A816F7C00F45F4B = {
 			isa = PBXGroup;
 			children = (
+				F9A7BF711A9D5E5D00F01BDC /* CoreLocation.framework */,
 				9D6540851A816F7C00F45F4B /* NavigationData */,
 				9D65409B1A816F7C00F45F4B /* NavigationDataTests */,
 				9D6540841A816F7C00F45F4B /* Products */,
