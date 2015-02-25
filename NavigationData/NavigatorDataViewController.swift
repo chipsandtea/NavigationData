@@ -33,6 +33,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     //gps
     let locationManager = CLLocationManager()
     
+    @IBOutlet weak var locationUpdateButton: UIButton!
     @IBOutlet var LATDEG: UITextField!
     @IBOutlet var LONGDEG: UITextField!
     @IBOutlet var LATMIN: UITextField!
@@ -208,6 +209,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     
     func hideGPS(sender:Bool){
         if(sender){
+            locationUpdateButton.hidden = true
             LATDEG.hidden = true
             LONGDEG.hidden = true
             LATMIN.hidden = true
@@ -223,6 +225,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
             S1Label.hidden = true
             S2Label.hidden = true
         }else{
+            locationUpdateButton.hidden = false
             LATDEG.hidden = false
             LONGDEG.hidden = false
             LATMIN.hidden = false
@@ -308,10 +311,12 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     }
     
     @IBAction func findMyLocation(sender: AnyObject) {
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -358,12 +363,24 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
             longSeconds,
             {return longDegrees >= 0 ? "E" : "W"}() )
         println(result)
+      
+        LATDEG.text = String(latDegrees)
+        LONGDEG.text = String(longDegrees)
+        LATMIN.text = String(latMinutes)
+        LONGMIN.text = String(longMinutes)
+        LATSEC.text = String(latSeconds)
+        LONGSEC.text = String(longSeconds)
+      
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         println("Error while updating location " + error.localizedDescription)
     }
 
+   @IBAction func saveDataDict(sender: AnyObject)
+   {
+      self.gatherAllData()
+   }
     
     func gatherAllData() {
         
@@ -399,6 +416,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         sharedData().addEntriesFromDictionary(bDictionary)
         sharedData().addEntriesFromDictionary(cDictionary)
         sharedData().addEntriesFromDictionary(dDictionary)
+        println(sharedData())
         
         //aDictionary.setObject(Location2.text, forKey:bearing_1)
         
@@ -423,6 +441,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         var DestVC: SubmitDataViewController = segue.destinationViewController as SubmitDataViewController
         DestVC.groupName = GroupName
     }
+
 
 
 }

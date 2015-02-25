@@ -17,9 +17,10 @@
 		9D65409F1A816F7C00F45F4B /* NavigationDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D65409E1A816F7C00F45F4B /* NavigationDataTests.swift */; };
 		9D6540A91A8170CF00F45F4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6540A81A8170CF00F45F4B /* Main.storyboard */; };
 		9D6540AD1A81710100F45F4B /* ResponsiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540AC1A81710100F45F4B /* ResponsiveTextFieldViewController.swift */; };
-		9D6540B31A8175CC00F45F4B /* NavigatorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */; };
 		9D6540B51A81760C00F45F4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6540B41A81760C00F45F4B /* ViewController.swift */; };
 		9DA065351A9B872B00AD4A9D /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */; };
+		B81578A41A9D8489003CD980 /* NavigatorDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81578A31A9D8489003CD980 /* NavigatorDataViewController.swift */; };
+		B8417BC31A9D95E50074F55D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8417BC21A9D95E50074F55D /* SwiftyJSON.swift */; };
 		F9A7BF721A9D5E5D00F01BDC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A7BF711A9D5E5D00F01BDC /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +51,10 @@
 		9D65409E1A816F7C00F45F4B /* NavigationDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDataTests.swift; sourceTree = "<group>"; };
 		9D6540A81A8170CF00F45F4B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9D6540AC1A81710100F45F4B /* ResponsiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveTextFieldViewController.swift; sourceTree = "<group>"; };
-		9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorDataViewController.swift; sourceTree = "<group>"; };
 		9D6540B41A81760C00F45F4B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA065341A9B872B00AD4A9D /* CompletedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		B81578A31A9D8489003CD980 /* NavigatorDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorDataViewController.swift; sourceTree = "<group>"; };
+		B8417BC21A9D95E50074F55D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F9A7BF711A9D5E5D00F01BDC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -97,8 +99,9 @@
 		9D6540851A816F7C00F45F4B /* NavigationData */ = {
 			isa = PBXGroup;
 			children = (
+				B8417BC21A9D95E50074F55D /* SwiftyJSON.swift */,
+				B81578A31A9D8489003CD980 /* NavigatorDataViewController.swift */,
 				9D6540B41A81760C00F45F4B /* ViewController.swift */,
-				9D6540B21A8175CC00F45F4B /* NavigatorDataViewController.swift */,
 				9D0AD2CE1A8AF4CB00660F48 /* GroupNameViewController.swift */,
 				9D0AD2D01A8AF4D800660F48 /* SchoolSelectionViewController.swift */,
 				9D0AD2D21A8AF4DF00660F48 /* SubmitDataViewController.swift */,
@@ -243,7 +246,8 @@
 			files = (
 				9D0AD2D11A8AF4D800660F48 /* SchoolSelectionViewController.swift in Sources */,
 				4A742BB11A8827CB001EF898 /* dictionary.m in Sources */,
-				9D6540B31A8175CC00F45F4B /* NavigatorDataViewController.swift in Sources */,
+				B81578A41A9D8489003CD980 /* NavigatorDataViewController.swift in Sources */,
+				B8417BC31A9D95E50074F55D /* SwiftyJSON.swift in Sources */,
 				9D6540AD1A81710100F45F4B /* ResponsiveTextFieldViewController.swift in Sources */,
 				9D6540B51A81760C00F45F4B /* ViewController.swift in Sources */,
 				9D6540891A816F7C00F45F4B /* AppDelegate.swift in Sources */,

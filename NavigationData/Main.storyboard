@@ -493,9 +493,9 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fG7-eN-WWl">
-                                <rect key="frame" x="615" y="598" width="333" height="30"/>
+                                <rect key="frame" x="767" y="598" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="PRESS ON LAST PAGE TO SAVE TO DICT#chris">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -510,9 +510,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0jj-MU-3v6">
-                                <rect key="frame" x="868" y="87" width="46" height="30"/>
+                                <rect key="frame" x="743" y="87" width="203" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Update my location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -533,6 +533,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveDataDict:" destination="XEn-Cw-P7P" eventType="touchUpInside" id="Om6-n7-mHI"/>
                                     <segue destination="jbO-7M-Qap" kind="push" id="HFo-VY-1RO"/>
                                 </connections>
                             </button>
@@ -585,6 +586,7 @@
                         <outlet property="WSLabel" destination="4K0-yH-R6W" id="qCH-MO-VMT"/>
                         <outlet property="WeTabButton" destination="9un-FL-YbS" id="XQC-aF-SF7"/>
                         <outlet property="doneButton" destination="w5A-H1-gy0" id="40X-e6-CU1"/>
+                        <outlet property="locationUpdateButton" destination="0jj-MU-3v6" id="Zc8-WH-UY6"/>
                         <outlet property="pickLoc" destination="j5e-di-VhG" id="rJz-Y5-gOA"/>
                         <outlet property="schoolGroupName" destination="OCc-kb-xiO" id="yhE-mm-PdR"/>
                         <outlet property="weatherLabel" destination="uPu-zl-Zly" id="3pl-0R-Ds8"/>
@@ -623,6 +625,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="submitFormData:" destination="jbO-7M-Qap" eventType="touchUpInside" id="daX-7H-r8c"/>
                                     <segue destination="wGk-YH-7RE" kind="push" id="29v-MC-lLn"/>
                                 </connections>
                             </button>
