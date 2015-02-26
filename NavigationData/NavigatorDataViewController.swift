@@ -410,7 +410,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         aDictionary["nmeasurement_date"] = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .NoStyle)
         bDictionary["type"] = "navigation_data"
         cDictionary["group"] = GroupName
-        dDictionary["id"] = "some id"
+        dDictionary["id"] = (sharedData().objectForKey("school_id") as String)
         
         sharedData().setObject(aDictionary, forKey: "data")
         sharedData().addEntriesFromDictionary(bDictionary)
