@@ -17,6 +17,8 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
    var contents = [String]()
    var dict = [String : String]()
    
+   var isSearch = false
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: true)
@@ -36,7 +38,11 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
    @IBAction func doSearch(sender: AnyObject) {
       contents = [String]()
       dict = [String : String]()
-      get(schoolField.text)
+      
+      if(!self.isSearch)
+      {
+         get(schoolField.text)
+      }
    }
    
    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int{
@@ -57,6 +63,8 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
    }
    
    func get(search : String) {
+      
+      self.isSearch = true
       
       let sessionConfig = NSURLSessionConfiguration.defaultSessionConfiguration()
       
@@ -97,6 +105,8 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
          else {
             println("URL Session Task Failed: %@", error.localizedDescription);
          }
+         
+         self.isSearch = false
       })
       
       task.resume()
