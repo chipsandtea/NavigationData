@@ -79,7 +79,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        schoolGroupName.text = "School: " + SchoolName + " || Group: " + GroupName
+        schoolGroupName.text = "School: " + SchoolName + " Group: " + GroupName
         pickLoc.hidden = true
         BLTabButton.layer.borderWidth = 1
         GPSTabButton.layer.borderWidth = 1
@@ -89,17 +89,6 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
         hideWeather(true)
         hideWind(true)
         doneButton.hidden = true
-        
-        DEPTH.keyboardType = UIKeyboardType.NumberPad
-        WINDSPEED.keyboardType = UIKeyboardType.NumberPad
-        LATDEG.keyboardType = UIKeyboardType.NumberPad
-        LONGDEG.keyboardType = UIKeyboardType.NumberPad
-        LATMIN.keyboardType = UIKeyboardType.NumberPad
-        LONGMIN.keyboardType = UIKeyboardType.NumberPad
-        LATSEC.keyboardType = UIKeyboardType.NumberPad
-        LONGSEC.keyboardType = UIKeyboardType.NumberPad
-        
-        
 
 		BLTabButton.backgroundColor = UIColor.lightGrayColor()
     }
