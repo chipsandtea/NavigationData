@@ -9,6 +9,7 @@
 import UIKit
 
 class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
+
    
    @IBOutlet weak var schoolPicker: UIPickerView!
    @IBOutlet weak var schoolField: UITextField!
@@ -113,9 +114,12 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var DestVC: GroupNameViewController = segue.destinationViewController as GroupNameViewController
-        if(!self.contents.isEmpty) {
-            DestVC.school = self.contents[self.schoolPicker.selectedRowInComponent(0)]
-            sharedData().setObject(self.dict[contents[self.schoolPicker.selectedRowInComponent(0)]]!, forKey: "school_id")
-        }
+        //DestVC.school = "Placeholder School"
+        //println(self.schoolPicker.selectedRowInComponent(0))
+      if(!self.contents.isEmpty) {
+        DestVC.school = self.contents[self.schoolPicker.selectedRowInComponent(0)]
+        sharedData().setObject(self.dict[contents[self.schoolPicker.selectedRowInComponent(0)]]!, forKey: "school_id")
+      }
     }
+
 }
