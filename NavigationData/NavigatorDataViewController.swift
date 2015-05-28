@@ -75,7 +75,7 @@ class NavigatorDataViewController: ResponsiveTextFieldViewController,UIPickerVie
     var selectedLoc: UITextField!
     
     
-    var locs = ["Cocoanut Grove","Mile Buoy","Radio Towers","Soquel Point","Santa Cruz Wharf","Harbor Lighthouse","Steamers Lighthouse","Government Buoy","Dream Inn","Seal Rock","Giant Dipper","Wharf Elbow","Black's Point"]
+    var locs = ["Black's Point","Cocoanut Grove","Dream Inn","Giant Dipper","Government Buoy","Harbor Lighthouse","Mile Buoy","Radio Towers","Santa Cruz Wharf","Seal Rock","Soquel Point","Steamers Lighthouse","Wharf Elbow"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
