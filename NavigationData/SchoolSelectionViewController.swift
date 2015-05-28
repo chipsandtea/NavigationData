@@ -90,15 +90,11 @@ class SchoolSelectionViewController: UIViewController, UIPickerViewDelegate {
                self.schoolPicker.reloadAllComponents()
                
             })
-            
-            
-            
          }
          else {
             println("URL Session Task Failed: %@", error.localizedDescription);
          }
       })
-      
       task.resume()
    }
    
